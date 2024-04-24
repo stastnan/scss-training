@@ -1,0 +1,30 @@
+@mixin container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@mixin header-footer-style {
+  background-color: $header-footer-background;
+  color: $text-footer-header;
+  text-align: center;
+}
+
+@mixin post-container {
+  width: 6 * col-width();
+
+  @media screen and (max-width: $small) {
+    width: 12 * col-width(12, 100%, 0.3%);
+  }
+}
+
+@mixin custom-border-radius($radius: 15px) {
+  border-radius: $radius;
+}
+
+@mixin custom-button {
+  text-decoration: none;
+  background-color: $header-footer-background;
+  color: #fff;
+  box-shadow: $button-box-shadow;
+  @include custom-border-radius(50px);
+}

@@ -1,0 +1,35 @@
+// Theme: , dark
+$theme: light;
+
+// === COLORS ===
+$body-background: #fff;
+$header-footer-background: #b28a69;
+$text-color: #000;
+$text-footer-header: #fff;
+$link-color: #b28a69;
+$link-hover: #b9a596;
+
+// === SIZES ===
+$header-height: 4rem;
+$footer-height: 3rem;
+$radius: 1rem;
+
+// === BOX SHADOWS ===
+$button-box-shadow: 11px 10px 12px 0px rgba(143, 143, 143, 1);
+
+// === TRANSITION AND ANIMATION ===
+$custom-transition: all 0.3s ease-in-out;
+$custom-scaling: scale(1.1);
+
+// === BREAKPOINT ===
+$small: 600px;
+$medium: 768px;
+$large: 992px;
+
+// === THEME ===
+@if $theme == dark {
+  $header-footer-background: #0b0d14;
+  $body-background: #262f45;
+  $text-color: #fff;
+  $button-box-shadow: 7px 8px 15px -1px rgba(28, 27, 28, 1);
+}

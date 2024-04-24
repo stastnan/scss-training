@@ -1,0 +1,163 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/functions";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $body-background;
+  font-family: "Red Hat Display", sans-serif;
+  @include container;
+}
+
+header {
+  height: $header-height;
+  @include header-footer-style;
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  box-shadow: $button-box-shadow;
+
+  h1 {
+    line-height: $header-height;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+}
+
+.about-my-instagram {
+  margin: 2rem 3rem;
+
+  h2,
+  p {
+    color: $text-color;
+  }
+
+  p {
+    margin: 1rem auto;
+    text-align: justify;
+
+    a {
+      text-decoration: none;
+      color: $link-color;
+
+      &:hover {
+        color: $link-hover;
+        transition: $custom-transition;
+      }
+    }
+  }
+}
+
+.post {
+  @include post-container;
+  margin: 1rem auto;
+  display: inline-block;
+
+  img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    @include custom-border-radius;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    width: 8.5rem;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    @include custom-button;
+
+    &:hover {
+      background-color: lighten($header-footer-background, 20%);
+      color: black;
+      transition: $custom-transition;
+      transform: $custom-scaling;
+      @if $theme == dark {
+        background-color: lighten($header-footer-background, 25%);
+        color: white;
+      }
+    }
+  }
+}
+
+footer {
+  height: $footer-height;
+  @include header-footer-style;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+
+  p {
+    line-height: $footer-height;
+  }
+}
+
+@media screen and (max-width: $large) {
+  header {
+    h1 {
+      font-size: 25px;
+    }
+  }
+
+  .about-my-instagram {
+    h2 {
+      text-align: center;
+      font-size: 23px;
+    }
+  }
+  .post {
+    img {
+      width: 70%;
+      height: 70%;
+    }
+  }
+}
+@media screen and (max-width: $medium) {
+  header {
+    h1 {
+      font-size: 21px;
+    }
+  }
+  .about-my-instagram {
+    margin: 2rem 1rem;
+
+    h2 {
+      text-align: center;
+      font-size: 19px;
+    }
+  }
+
+  footer {
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $small) {
+  header {
+    h1 {
+      font-size: 18px;
+    }
+  }
+
+  .about-my-instagram {
+    margin: 2rem 1rem;
+
+    h2 {
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  footer {
+    p {
+      font-size: 14px;
+    }
+  }
+}
